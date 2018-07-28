@@ -7,10 +7,7 @@ module.exports = {
     },
 
     db:{
-        host: 'localhost',
-        user: 'root',
-        password: 'root@123',
-        database: 'fashion_store_erp'
+        URI: 'mongodb://localhost:27017/fashion_erp'
     },
 
     mailer:{

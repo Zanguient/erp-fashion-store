@@ -18,6 +18,14 @@ module.exports = {
         local.port ||
         8080,
 
+    
+    mongo: {
+        uri: process.env.MONGOLAB_URI ||
+            process.env.MONGOHQ_URL ||
+            process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME ||
+            local.mongo.uri
+    },
+
     selfURL: 'http://localhost',
     emails: {
         from: {

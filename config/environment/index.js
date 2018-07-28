@@ -34,6 +34,16 @@ let config = {
     // Should we populate the DB with sample data?
     seedDB: false,
 
+    mongo: {
+        options: {
+            // db: {
+            // safe: true,
+            // },
+            //useMongoClient: true
+            useNewUrlParser: true
+        }
+    },
+
     selfDomain: "erpfs.com",
     
     // kafka: {

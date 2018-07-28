@@ -10,24 +10,34 @@ process.env.ERPFS_NODE_ENV = process.env.ERPFS_NODE_ENV || 'development';
 const argv = require('minimist')(process.argv.slice(2));
 const express = require('express');
 const config = require('./config/environment');
-const mysql = require('mysql')
+const mongoose = require('mongoose');
+//const mysql = require('mysql')
 // const dbService = require('./api/services/dbConnections');
 // let authService = require('./auth/auth.service');
 // var services = require('./services');
 const path = require('path');
 
+//Connect to database
+mongoose.Promise = global.Promise;
+mongoose.connect(config.db.URI, config.mongo.options);
 
-const connection = mysql.createConnection({
-    host     : config.db.host,
-    user     : config.db.user,
-    password : config.db.password,
-    database : config.db.database
-  });
+mongoose.connection.on('error', function (err) {
+    console.error('MongoDB connection error: ' + err);
+    process.exit(-1);
+});
+
+
+// const connection = mysql.createConnection({
+//     host     : config.db.host,
+//     user     : config.db.user,
+//     password : config.db.password,
+//     database : config.db.database
+//   });
   
-connection.connect(function(err) {
-    if (err) throw err
-    console.log('You are now connected...')
-})
+// connection.connect(function(err) {
+//     if (err) throw err
+//     console.log('You are now connected...')
+// })
 
 
 const app = express();
