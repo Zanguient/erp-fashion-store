@@ -6,19 +6,14 @@ const Schema = mongoose.Schema;
 const config = require('../../config/environment');
 
 
-const VendorSchema = new Schema({
+const ProductTypeSchema = new Schema({
     name : {
         type: String,
         required: true
     },
-    address : {
-        type: String
-    },
-    phone_number : {
-        type: String
-    },
-    mobile : {
-        type: String
+    vendor : {
+        type: Schema.Types.ObjectId, 
+        ref: 'Vendor'
     },
     is_active : {
         type: Boolean,
@@ -38,8 +33,8 @@ const VendorSchema = new Schema({
     timestamps: true
 });
 
-VendorSchema.pre('find', function () {
+ProductTypeSchema.pre('find', function () {
     this.where({ is_active: { $ne: false } });
 });
 
-module.exports = mongoose.model('Vendor', VendorSchema);
+module.exports = mongoose.model('ProductType', ProductTypeSchema);
