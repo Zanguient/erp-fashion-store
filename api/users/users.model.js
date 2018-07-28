@@ -21,6 +21,10 @@ const UserSchema = new Schema({
     password : {
         type: String,
         required: true
+    },
+    is_active: {
+        type: Boolean,
+        default: true
     }
 },{
     id: false,
@@ -34,6 +38,10 @@ const UserSchema = new Schema({
         setters: false 
     },
     timestamps: true
+});
+
+UserSchema.pre('find', function () {
+    this.where({ is_active: { $ne: false } });
 });
 
 
@@ -59,10 +67,3 @@ UserSchema
 
 
 module.exports = mongoose.model('User', UserSchema);
-
-// module.exports = function (model) {
-//     // if (model)
-//     //     return mongoose.model('User', UserSchema);
-//     // else
-//         return UserSchema;
-//}
