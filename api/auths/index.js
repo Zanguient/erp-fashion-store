@@ -12,5 +12,6 @@ const router = express.Router();
 
 /* ADMIN ROUTES START */
 router.get('/', controller.index);
+router.post('/login', controller.login);
 
 module.exports = router;

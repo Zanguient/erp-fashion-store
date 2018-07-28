@@ -3,7 +3,7 @@
 module.exports = {
 
     secrets: {
-        session: "tts-secure"
+        session: "fashion-store-secure"
     },
 
     db:{
