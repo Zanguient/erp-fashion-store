@@ -10,5 +10,7 @@ module.exports = function(app) {
 
     app.use('/api/v1/auths', require('./api/auths'));
     app.use('/api/v1/vendors', require('./api/vendors'));
-    app.use('/api/v1/productTypes', require('./api/productTypes'));    
+    app.use('/api/v1/productTypes', require('./api/productTypes'));
+    app.use('/api/v1/productcategory', require('./api/productCategory'));
+    // app.use('/api/v1/productvariants', require('./api/productvariants'));    
 };
