@@ -39,5 +39,9 @@
     "mysql": "^2.16.0",
     "nodemailer": "^4.6.7",
     "path": "^0.12.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }

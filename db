@@ -1,0 +1,57 @@
+Vendor
+-name
+-address
+-phone number
+-mobile
+
+Product Type
+-name
+-vendor
+
+Product Variant
+-product_variant_code
+-name
+-product type
+-color
+-type(slim fit, regular fit)
+-size(s,l,xl)
+
+Purchase Order
+-product variant
+-purchase date
+-purchase price
+-cgst
+-sgst
+-qty
+
+Inventory
+-product variant
+-purchase price
+-selling price
+-qty
+-damaged qty
+-returned qty
+
+Order
+-order number
+-order date
+-customer name
+-customer number
+-bill amount
+-product variant
+-qty
+-payment type(cash / card)
+-transaction id
+-cash paid
+-balance returned
+
+Order Item(individual items in order)
+-order number
+-product variant
+-qty(always be 1, if 4 qty purchased in this product variant, each will have separate entry)
+-selling price
+-cgst
+-sgst
+-discount %
+-sold price
+-status(sold, returned mismatch size, returned damaged)
