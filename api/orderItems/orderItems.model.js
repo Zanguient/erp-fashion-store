@@ -11,8 +11,8 @@ const OrderItemSchema = new Schema({
         type: Schema.Types.ObjectId, 
         ref: 'Order'
     },
-    customer : {
-        product: Schema.Types.ObjectId, 
+    product : {
+        type: Schema.Types.ObjectId, 
         ref: 'ProductVariant'
     },
     total_price : {

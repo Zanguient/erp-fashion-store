@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const controller = require('./orders.controller');
+const controller = require('./orderItems.controller');
 const config = require('../../config/environment');
 const router = express.Router();
 

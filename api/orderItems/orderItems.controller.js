@@ -5,7 +5,7 @@ const _ = require('lodash');
 //const jwt = require('jsonwebtoken');
 const mailer = require('../../utils/mailer');
 const config = require('../../config/environment');
-const orderItem = require('../orderItem/orderItem.model');
+const orderItem = require('../orderItems/orderItems.model');
 
 
 module.exports = {
