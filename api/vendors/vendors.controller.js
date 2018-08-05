@@ -20,7 +20,7 @@ module.exports = {
             res.status(200).json({ message: "Vendor Details fetched Successfully", data : vendorDetails});
         })
     },
-    fetchOn: (req, res) => {
+    retrieve: (req, res) => {
         const vendorId = req.params.id;
         Vendor
         .find({_id:vendorId})
