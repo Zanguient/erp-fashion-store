@@ -6,6 +6,7 @@ const config = require('../../config/environment');
 const router = express.Router();
 
 router.get('/', controller.index);
+router.get('/:id', controller.retrieve);
 router.post('/', controller.create);
 router.put('/:id', controller.update);
 router.delete('/:id', controller.delete);

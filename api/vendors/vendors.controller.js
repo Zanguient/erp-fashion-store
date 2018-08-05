@@ -20,6 +20,18 @@ module.exports = {
             res.status(200).json({ message: "Vendor Details fetched Successfully", data : vendorDetails});
         })
     },
+    fetchOn: (req, res) => {
+        const vendorId = req.params.id;
+        Vendor
+        .find({_id:vendorId})
+        .exec((err, vendorDetails)=>{
+            if (err) {
+                console.error(err);
+                res.status(500).json({message : err})
+            }
+            res.status(200).json({ message: "Order Details fetched Successfully", data : vendorDetails});
+        })
+    },
     create: (req, res) => {
         Vendor.create(req.body, (err, vendorDetails) => {
             if (err) {
