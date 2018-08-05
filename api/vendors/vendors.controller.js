@@ -23,7 +23,7 @@ module.exports = {
     retrieve: (req, res) => {
         const vendorId = req.params.id;
         Vendor
-        .findOneById({_id:vendorId})
+        .findOne({_id:vendorId})
         .exec((err, vendorDetails)=>{
             if (err) {
                 console.error(err);
